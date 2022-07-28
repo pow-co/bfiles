@@ -17,4 +17,4 @@ RUN npm run build
 
 RUN npm link
 
-CMD rabbi start
+CMD bfiles server

@@ -1,16 +1,44 @@
-![Rabbi Banner Image](https://doge.bitcoinfiles.org/946db0d3fcc13a429b58c1f8b2ec6af4292bcd5af9f9118996e596f5f8ab336c)
-
-# bfiles bitcoin files server
-
+![Bfiles Banner Image](https://doge.bitcoinfiles.org/946db0d3fcc13a429b58c1f8b2ec6af4292bcd5af9f9118996e596f5f8ab336c)
 
 ## Installation
 
 ```
-npm install --global bfiles
-```
+npm install -g bfiles
 
 ```
-docker run -p 5200:5200 pow-co/bfiles bfiles --server
+or
+
+```
+docker pull proofofwork/bfiles
+
+```
+
+## Operation
+
+```
+bfiles server --port=5200
+
+```
+or
+
+```
+docker run -p 5200:5200 proofofwork/bfiles bfiles server --port=5200
+
+```
+
+## Usage
+
+```
+#!/usr/bin/env bash
+
+TXID=946db0d3fcc13a429b58c1f8b2ec6af4292bcd5af9f9118996e596f5f8ab336c
+
+curl http://localhost:5200/$TXID > bfiles_banner.png
+```
+or
+
+```
+<img src="http://localhost:5200/946db0d3fcc13a429b58c1f8b2ec6af4292bcd5af9f9118996e596f5f8ab336c"/>
 ```
 
 ## Development
