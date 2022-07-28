@@ -1,8 +1,7 @@
 {
-   "name": "rabbi_cli_app",
-   "version": "0.1.2",
-   "private": true,
-   "description": "",
+   "name": "bfiles",
+   "version": "0.0.1",
+   "description": "Bitcoin File Server",
    "scripts": {
       "start": "ts-node src/main.ts",
       "test": "NODE_ENV=test mocha --require=ts-node/register --timeout=20000 __tests__/**/*_test.ts --exit",
@@ -13,7 +12,7 @@
       "commit": "npx cz"
    },
    "bin": {
-      "rabbi": "./dist/bin/cli.js"
+      "bfiles": "./dist/bin/cli.js"
    },
    "keywords": [],
    "author": "Zyler",

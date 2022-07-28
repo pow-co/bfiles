@@ -1,8 +1,19 @@
-![Rabbi Banner Image](https://doge.bitcoinfiles.org/b463dd2d110537e2c33f26583ed86aa35bdb1bc4f99d8146a590d7a7e95c74a5)
+![Rabbi Banner Image](https://doge.bitcoinfiles.org/946db0d3fcc13a429b58c1f8b2ec6af4292bcd5af9f9118996e596f5f8ab336c)
 
-# Typescript API Server
+# bfiles bitcoin files server
+
 
 ## Installation
+
+```
+npm install --global bfiles
+```
+
+```
+docker run -p 5200:5200 pow-co/bfiles bfiles --server
+```
+
+## Development
 
 To download and install dependencies run `npm install` 
 
@@ -14,7 +25,7 @@ To run the API server run `npm start`
 
 To run tests run `npm run test`
 
-## Development
+## Contribution
 
 To commit new code run `npm run commit`
 
