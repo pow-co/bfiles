@@ -15,6 +15,8 @@ const Pack = require('../package');
 
 import { load } from './server/handlers'
 
+import * as H2o2 from '@hapi/h2o2';
+
 const handlers = load(join(__dirname, './server/handlers'))
 
 export const server = new Server({
@@ -104,6 +106,22 @@ export async function start() {
     ]);
 
     log.info('server.api.documentation.swagger', swaggerOptions)
+
+    await server.register(H2o2);
+
+    server.route({
+      method: "*",
+      path: '/{txid}',
+      handler: {
+          proxy: {
+                  host: 'doge.bitcoinfiles.org',
+                  xforward: true,
+                  port: '443',
+                  protocol: 'https',
+                  passThrough: true
+               }
+         }
+    });
   }
 
   await server.start();
