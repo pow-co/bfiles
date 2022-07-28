@@ -4,26 +4,22 @@
 
 ```
 npm install -g bfiles
-
 ```
 or
 
 ```
 docker pull proofofwork/bfiles
-
 ```
 
 ## Operation
 
 ```
 bfiles server --port=5200
-
 ```
 or
 
 ```
 docker run -p 5200:5200 proofofwork/bfiles bfiles server --port=5200
-
 ```
 
 ## Usage
