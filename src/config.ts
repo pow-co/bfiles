@@ -52,7 +52,8 @@ nconf.defaults({
   swagger_enabled: true,
   postgres_enabled: false,
   amqp_enabled: false,
-  loki_enabled: false
+  loki_enabled: false,
+  blockchain_provider: 'run.whatsonchain'
 })
 
 export default nconf

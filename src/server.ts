@@ -17,6 +17,8 @@ import { load } from './server/handlers'
 
 import * as H2o2 from '@hapi/h2o2';
 
+import { notFound } from 'boom'
+
 const handlers = load(join(__dirname, './server/handlers'))
 
 export const server = new Server({
@@ -106,8 +108,33 @@ export async function start() {
     ]);
 
     log.info('server.api.documentation.swagger', swaggerOptions)
+  }
 
-    await server.register(H2o2);
+  await server.register(H2o2);
+
+  server.route({
+    method: "GET",
+    path: "/favicon.ico",
+    handler: () => notFound()
+  })
+
+  const provider = config.get('blockchain_provider')
+
+  if (provider === 'run.whatsonchain') {
+
+    server.route({
+      method: "GET",
+      path: '/{txid}',
+      handler: handlers.Bfiles.show
+    });
+
+    server.route({
+      method: "GET",
+      path: '/api/{txid}',
+      handler: handlers.Bfiles.showAsJSON
+    });
+    
+  } else if (provider === 'doge.bitcoinfiles.org') {
 
     server.route({
       method: "*",
@@ -119,9 +146,16 @@ export async function start() {
                   port: '443',
                   protocol: 'https',
                   passThrough: true
-               }
-         }
+              }
+        }
     });
+
+  } else {
+
+    log.error('invalid or missing config variable: blockchain_provider')
+    
+    process.exit(1)
+
   }
 
   await server.start();

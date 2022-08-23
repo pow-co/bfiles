@@ -1,4 +1,4 @@
-![Bfiles Banner Image](https://doge.bitcoinfiles.org/946db0d3fcc13a429b58c1f8b2ec6af4292bcd5af9f9118996e596f5f8ab336c)
+![Bfiles Banner Image](https://bfiles.pow.co/946db0d3fcc13a429b58c1f8b2ec6af4292bcd5af9f9118996e596f5f8ab336c)
 
 ## Installation
 

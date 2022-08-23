@@ -1,6 +1,6 @@
 {
    "name": "bfiles",
-   "version": "0.0.2",
+   "version": "0.1.0",
    "description": "Bitcoin File Server",
    "scripts": {
       "start": "ts-node src/main.ts",
@@ -33,6 +33,7 @@
       "prom-client": "^14.0.1",
       "prompt-async": "^0.9.9",
       "rabbi": "^1.19.4",
+      "run-sdk": "^0.6.40",
       "winston": "^3.3.3",
       "ws": "^8.2.0"
    },
